@@ -1,0 +1,231 @@
+@import url(https://db.onlinewebfonts.com/c/3932ccf2aa16c422cee959edbdc6651b?family=Swiss+721+Roman);
+@import url(https://db.onlinewebfonts.com/c/937cc8420553d2c374db977e3c1e5d49?family=Swiss+721+Medium);
+
+/* -------------------- VAR MOBILE -------------------- */
+:root {
+    --fs: 13;
+    --margin-s: 10px;
+    --margin-m: 40px;
+}
+
+/* -------------------- VAR DESKTOP -------------------- */
+@media screen and (min-width: 1280px) {
+    :root {
+        --margin-s: 10px;
+        --margin-m: 40px;
+    }
+}
+
+/* -------------------- VAR DESKTOP XL-------------------- */
+@media screen and (min-width: 1440px) {
+    :root {
+        --margin-s: 15px;
+        --margin-m: 45px;
+
+    }
+}
+
+/* -------------------- VAR DESKTOP XXL -------------------- */
+@media screen and (min-width: 1920px) {
+    :root {
+        --fs: 15;
+        --margin-m: 75px;
+    }
+}
+
+/* -------------------- VAR DESKTOP XXXL -------------------- */
+@media screen and (min-width: 2560px) {
+    :root {
+        --margin-m: 90px;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100dvh;
+    scroll-behavior: smooth;
+    font-family: "Swiss 721 Roman", Arial, Helvetica, sans-serif;
+    font-size: var(--fs);
+    line-height: 1.2em;
+    color: black;
+}
+
+h1 {
+    font-size: var(--fs);
+    font-family: "Swiss 721 Medium", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+p {
+    margin-top: var(--margin-s);
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.logo {
+    grid-column: 1 / 7;
+}
+
+.logo img {
+    margin: 4px 4px 0px;
+}
+
+.tws-pricelist {
+    grid-column: 1 / 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 8px;
+}
+
+.accordion.title {
+    display: inline;
+}
+
+.accordion span,
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgba(0,0,0,0);
+    transition: text-decoration-color 300ms ease-out;
+}
+
+.accordion span:hover,
+a:hover {
+    text-decoration-color: rgba(0,0,0,1);
+}
+
+.panel {
+    padding-top: var(--margin-s);
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.row div:first-child {
+    width: 50%;
+}
+
+.bookings-and-contacts {
+    padding: 0px 8px;
+    grid-column: 1 / 7;
+}
+
+.image-container {
+    grid-column: 7 / 11;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+}
+
+/* -------------------- TABLET -------------------- */
+@media screen and (min-width: 768px) {
+    .logo {
+        grid-column: 1 / 5;
+    }
+
+    .tws-pricelist {
+        grid-column: 1 / 7;
+    }
+
+    .image-container {
+        grid-column: 8 / 11;
+    }
+}
+
+/* -------------------- TABLET L -------------------- */
+@media screen and (min-width: 1024px) {
+    .logo {
+        grid-column: 1 / 4;
+    }
+
+    .image-container {
+        grid-column: 9 / 11;
+    }
+}
+
+
+/* -------------------- DESKTOP -------------------- */
+@media screen and (min-width: 1280px) {
+    .container {
+        height: calc(100% - 16px);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr max-content;
+        column-gap: 8px;
+        padding: 8px;
+    }
+
+    .logo {
+        grid-column: 1 / 4;
+        margin: 0px;
+    }
+    
+    .tws-pricelist {
+        display: block;
+        padding: 0px;
+        grid-column: 1 / 6;
+        grid-row: 2/3;
+    }
+
+    .pricelist {
+        margin-top: var(--margin-m);
+    }
+
+    .row div:first-child {
+        width: 30%;
+    }
+
+    .image-container {
+        grid-column: 10 / 13;
+        grid-row: 2 / 3;
+    }
+
+    .bookings-and-contacts {
+        padding: 0px;
+        grid-column: 7 / 10;
+        grid-row: 2 / 3;
+    }    
+}
+
+/* -------------------- DESKTOP - XL -------------------- */
+@media screen and (min-width: 1440px) {
+    .image-container {
+        grid-column: 10 / 13;
+    }
+}
+
+/* -------------------- DESKTOP - XXL -------------------- */
+@media screen and (min-width: 1920px) {
+    .tws-pricelist {
+        grid-column: 1 / 6;
+    }
+
+    .row div:first-child {
+        width: 30%;
+    }
+}
+
+/* -------------------- DESKTOP - XXXL -------------------- */
+@media screen and (min-width: 2560px) {
+    .tws-pricelist {
+        grid-column: 1 / 5;
+    }
+}
