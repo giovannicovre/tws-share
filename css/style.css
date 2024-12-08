@@ -3,7 +3,7 @@
 
 /* -------------------- VAR MOBILE -------------------- */
 :root {
-    --fs: 13;
+    --fs: 12px;
     --margin-s: 10px;
     --margin-m: 40px;
 }
@@ -28,7 +28,7 @@
 /* -------------------- VAR DESKTOP XXL -------------------- */
 @media screen and (min-width: 1920px) {
     :root {
-        --fs: 15;
+        --fs: 15px;
         --margin-m: 75px;
     }
 }
@@ -76,7 +76,12 @@ p {
 }
 
 .logo img {
-    margin: 4px 4px 0px;
+    margin-top: 4px;
+}
+
+.tws .description p {
+    text-align: justify;
+    /* text-align-last: justify; */
 }
 
 .tws-pricelist {
@@ -97,7 +102,7 @@ a {
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 0.2em;
-    text-decoration-color: rgba(0,0,0,0);
+    text-decoration-color: rgba(0,0,0,1);
     transition: text-decoration-color 300ms ease-out;
 }
 
@@ -165,12 +170,12 @@ a:hover {
 /* -------------------- DESKTOP -------------------- */
 @media screen and (min-width: 1280px) {
     .container {
-        height: calc(100% - 16px);
+        height: 100dvh;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr max-content;
         column-gap: 8px;
-        padding: 8px;
+        padding: 0px;
     }
 
     .logo {
@@ -180,7 +185,7 @@ a:hover {
     
     .tws-pricelist {
         display: block;
-        padding: 0px;
+        padding: 0px 8px;
         grid-column: 1 / 6;
         grid-row: 2/3;
     }
